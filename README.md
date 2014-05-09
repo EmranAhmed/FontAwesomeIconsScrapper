@@ -1,4 +1,4 @@
-Font Awesome Icon Scrapper
+Font Awesome Icon Scraper
 ========================
 
 Scrap all font awesome icons from fontawesome.io and show as array :)
