@@ -12,13 +12,19 @@ $fontawesome_icons = array(' . "\n\n";
 $iconsArray = array();
 foreach( $rows as $row ){
 	$iconNode = $row->nodeValue;
-	preg_match('/(?P<icon>[a-z0-9\-]+)/', $iconNode, $matches);
+
+         preg_match('/(?P<icon>fa-[a-z0-9\-]+)/i', $iconNode, $matches);
+
+	//preg_match('/(?P<icon>[a-z0-9\-]+)/', $iconNode, $matches);
+
 	$arr_index = $prefix . trim($matches['icon']);
 	$arr_value = trim($matches['icon']);
 	$iconsArray[] = "\t'". $arr_index . "'=>'" . $arr_value . "'"; 
 }
 $content .= implode(','."\n", $iconsArray);
 $content .= "\n".');';
+
+$iconsArray = array_unique($iconsArray);
 ?>
 
 <h1>Total: <?php echo count($iconsArray) ?> Icons :)</h1>
